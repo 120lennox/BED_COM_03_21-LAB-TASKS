@@ -31,6 +31,7 @@ int main(){
     int result;
     string width;
     string length;
+    string height;
 
     while(true){
         cout<<"Please select the area of the shape to calculate\n";
@@ -46,7 +47,7 @@ int main(){
             cout<<"Enter width: \n";
             getline(cin, width);
             int width_int = check_int(width);
-            result = sqaure(width_int);
+            result = square(width_int);
             cout<<"Result:"<<result<<endl;
         }
         else if(option == 2){
@@ -58,6 +59,25 @@ int main(){
             int length_int = check_int(length);
             result = rectangle(width_int, length_int);
             cout<<"Result:"<<result<<endl;
+        }
+
+        else if(option == 3){
+            cout<<"Enter height: \n";
+            getline(cin, height);
+            cout<<"Enter base: \n";
+            getline(cin, length);
+            int height_int = check_int(height);
+            int length_int = check_int(length);
+            result = triangle(height_int, length_int);
+            cout<<"Result:"<<result<<endl;
+        }
+
+        else if(option == 4){
+            break;
+        }
+
+        else{
+            cout<<"Invalid input \n";
         }
     }
     

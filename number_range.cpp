@@ -10,7 +10,7 @@ using namespace std;
 void input_num(){
     string num;
     int count = 0;
-    while(count == 1){
+    while(count != 1){
         cout<<"Enter a value between 5 and 10: ";
         getline(cin, num);
 

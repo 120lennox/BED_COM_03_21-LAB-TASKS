@@ -17,12 +17,12 @@ void input_num(){
 
         stringstream ss(num);
         if (ss>>number && ss.eof()){
-            if (num >= 5 && num <= 10){
-                cout<<"Your input ("<<num<<") has been accepted\n";
+            if (number >= 5 && number <= 10){
+                cout<<"Your input ("<<number<<") has been accepted\n";
                 break;
             }
             else{
-                cout<<"You entered "<<num<<". Please enter a value between 5 and 10\n";
+                cout<<"You entered "<<number<<". Please enter a value between 5 and 10\n";
             }
         }
 

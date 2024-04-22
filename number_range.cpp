@@ -53,6 +53,8 @@ void num_range(){
     }
 }
 
+
+
 int main(){
     inputNum<int>();
     return 0;

@@ -8,16 +8,20 @@
 #include <sstream>
 using namespace std;
 
-int rectangle(int width, int length){
+double rectangle(double width, double length){
     return length * width;
 }
-int square(int length){
+double square(double length){
     return length * length;
 }
 
-int triangle(int base, int height){
+double triangle(double base, double height){
     return (base * height) / 2;
 }
+
+/**
+*function checks input if it is an integer
+*/
 
 int check_int(string input){
     int num_converted;
@@ -31,10 +35,22 @@ int check_int(string input){
     }
 }
 
+double check_double(string input){
+    double num_converted;
+    stringstream ss(input);
+    if (ss>>num_converted && ss.eof()){
+        return num_converted;
+    }
+    else{
+        cout<<"Invalid input!\n";
+        return -1;
+    }
+}
+
 int main(){
     string opt;
     int option;
-    int result;
+    double result;
     string width;
     string length;
     string height;
@@ -52,7 +68,7 @@ int main(){
         if (option == 1){
             cout<<"Enter width: \n";
             getline(cin, width);
-            int width_int = check_int(width);
+            double width_int = check_double(width);
             result = square(width_int);
             cout<<"Result:"<<result<<endl;
         }
@@ -61,8 +77,8 @@ int main(){
             getline(cin, width);
             cout<<"Enter length: \n";
             getline(cin, length);
-            int width_int = check_int(width);
-            int length_int = check_int(length);
+            double width_int = check_double(width);
+            double length_int = check_double(length);
             result = rectangle(width_int, length_int);
             cout<<"Result:"<<result<<endl;
         }
@@ -72,8 +88,8 @@ int main(){
             getline(cin, height);
             cout<<"Enter base: \n";
             getline(cin, length);
-            int height_int = check_int(height);
-            int length_int = check_int(length);
+            double height_int = check_double(height);
+            double length_int = check_double(length);
             result = triangle(height_int, length_int);
             cout<<"Result:"<<result<<endl;
         }

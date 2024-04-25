@@ -1,3 +1,8 @@
+/**
+*@author: Lennox Mountain
+* Program calculates the area of diferent shapes. given the correct input
+*/
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -21,6 +26,7 @@ int check_int(string input){
         return num_converted;
     }
     else{
+        cout<<"Invalid input!\n";
         return -1;
     }
 }

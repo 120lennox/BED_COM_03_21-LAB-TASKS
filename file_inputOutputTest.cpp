@@ -18,6 +18,18 @@ void output_text(){
     cout<<"successful! \n";
 }
 
+void check_file_exist(){
+    ofstream output;
+    output.open("score.txt");
+
+    if (output.fail()){
+        cout<<"file does not exist \n";
+    }
+    else{
+        cout<<"file opened \n";
+    }
+}
+
 /**
  * file inputs text from external file
 */
@@ -35,7 +47,8 @@ void input_text(){
     cout<<first_word<<second_word<<endl;
     input.close();
 
-    //this way works! but it is not efficient for large files. you dont have to know the number of words you have in your
+    //this way works! but it is not efficient for large files. you dont have to know the number of words you have in your file so that you declare variables for each of them. 
+    //more tips in upcoming functions. 
 
     
 }
@@ -47,7 +60,8 @@ void input_text(){
 */
 
 int main(){
-    //output_text();
-    input_text();
+    // output_text();
+    // input_text();
+    check_file_exist();
     return 0;
 }

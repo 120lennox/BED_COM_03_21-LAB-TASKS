@@ -83,7 +83,7 @@ void testEnd_of_file(){
 
 
 //solution 1
-void fixes_testEnd_of_file(){
+void fixed_testEnd_of_file(){
     ifstream input;
     input.open("number.txt");
 
@@ -91,8 +91,27 @@ void fixes_testEnd_of_file(){
     int sum = 0;
 
     while(input>>number){
-        
+        cout<<number<<" ";
+        sum += number;   
     }
+    cout<<"Sum: "<<sum<<"\n";
+}
+
+//solution 2
+void solution2(){
+    ifstream input;
+    input.open("number.txt");
+
+    int number;
+    int sum = 0;
+    while(!input.eof()){
+        input>>number;
+        if(input.eof()) 
+            break;
+        cout<<number<<" ";
+        sum =+ number;
+    }
+    cout<<"Sum: "<<"\n";
 }
 
 /**

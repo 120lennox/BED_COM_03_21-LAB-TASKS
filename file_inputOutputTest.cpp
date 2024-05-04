@@ -3,12 +3,9 @@
 using namespace std;
 
 /**
- * @author: Lennox Mountain
- * main: pacticing writing input and output files. 
- * return: returns 0 on successful
+ * function outputs texts in external file
 */
-
-int main(){
+void output_text(){
     //declaring an ofstream object from fstream class. 
     ofstream write;
 
@@ -17,6 +14,40 @@ int main(){
 
     //inserting text in file
     write<<"Happy"<<" coding!"<<endl;
+    write.close();
     cout<<"successful! \n";
+}
+
+/**
+ * file inputs text from external file
+*/
+void input_text(){
+    //declaring ifstream object
+    ifstream input;
+
+    //declaring variables that will hold words contained in the file we will be using
+    string first_word;
+    string second_word;
+
+    input.open("file.txt");
+
+    input>>first_word>>second_word;
+    cout<<first_word<<second_word<<endl;
+    input.close();
+
+    //this way works! but it is not efficient for large files. you dont have to know the number of words you have in your
+
+    
+}
+
+/**
+ * @author: Lennox Mountain
+ * main: pacticing writing input and output files. 
+ * return: returns 0 on successful
+*/
+
+int main(){
+    //output_text();
+    input_text();
     return 0;
 }

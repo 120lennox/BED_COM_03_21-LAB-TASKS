@@ -65,11 +65,12 @@ void generate_numbers(){
     cout<<"done \n";
 }
 
+//but this particular code is buggy why? the last number is being read twice and we have tpo fic that
 void testEnd_of_file(){
     ifstream input;
     input.open("numbers.txt");
 
-    int number = 0;
+    int number;
     int sum = 0;
     while(!input.eof()){
         input>>number;
@@ -77,7 +78,21 @@ void testEnd_of_file(){
         sum += number;
     }
 
-    cout<<"sum: "<<number<<"\n";
+    cout<<"sum: "<<sum<<"\n";
+}
+
+
+//solution 1
+void fixes_testEnd_of_file(){
+    ifstream input;
+    input.open("number.txt");
+
+    int number;
+    int sum = 0;
+
+    while(input>>number){
+        
+    }
 }
 
 /**

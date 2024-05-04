@@ -53,6 +53,20 @@ void input_text(){
     
 }
 
+//generate numbers 
+void generate_numbers(){
+    ofstream output;
+    output.open("numbers.txt");
+
+    for (int i = 1; i <= 30; i++){
+        output<<i<<" ";
+        if (i % 10 == 0) output<<"\n";
+    }
+    cout<<"done \n";
+}
+
+void 
+
 /**
  * @author: Lennox Mountain
  * main: pacticing writing input and output files. 
@@ -62,6 +76,7 @@ void input_text(){
 int main(){
     // output_text();
     // input_text();
-    check_file_exist();
+    //check_file_exist();
+    generate_numbers();
     return 0;
 }

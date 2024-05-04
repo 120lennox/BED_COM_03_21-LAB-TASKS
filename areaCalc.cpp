@@ -63,7 +63,7 @@ int main(){
         cout<<"4. Quit\n";
         getline(cin, opt);
 
-        int option = check_int(opt);
+        option = check_int(opt);
 
         if (option == 1){
             cout<<"Enter width: \n";

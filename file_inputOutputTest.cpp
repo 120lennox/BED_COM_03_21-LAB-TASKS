@@ -65,7 +65,20 @@ void generate_numbers(){
     cout<<"done \n";
 }
 
-void 
+void testEnd_of_file(){
+    ifstream input;
+    input.open("numbers.txt");
+
+    int number = 0;
+    int sum = 0;
+    while(!input.eof()){
+        input>>number;
+        cout<<number<<" ";
+        sum += number;
+    }
+
+    cout<<"sum: "<<number<<"\n";
+}
 
 /**
  * @author: Lennox Mountain
@@ -77,6 +90,7 @@ int main(){
     // output_text();
     // input_text();
     //check_file_exist();
-    generate_numbers();
+    //generate_numbers();
+    testEnd_of_file();
     return 0;
 }

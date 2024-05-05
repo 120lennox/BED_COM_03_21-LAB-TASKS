@@ -9,9 +9,13 @@
 #include <algorithm>
 using namespace std;
 
-
+/**
+ * calculate_vowels: calculates vowels in a string 
+ * return: number of vowels
+*/
 int calculate_vowels(string fileData){
     int count = 0;
+    //checks for vowel in filedata
     for(char c: fileData){
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') count++;
     }

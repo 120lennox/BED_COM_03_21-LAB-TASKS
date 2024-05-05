@@ -35,6 +35,9 @@ string reverse_string(string filedata){
     return filedata;
 }
 
+/**
+ * 
+*/
 void capitalize_letter(string filedata){
     ofstream output;
     string word;
@@ -50,7 +53,10 @@ void capitalize_letter(string filedata){
     }   
 }
 
-
+/**
+ * check_int: checks if input option is really int
+ * return: an int on success
+*/
 int check_int(string input){
     int num_converted;
     //converts the string input as string stream

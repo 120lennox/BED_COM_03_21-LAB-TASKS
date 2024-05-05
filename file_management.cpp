@@ -6,14 +6,13 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <algorithm>
 using namespace std;
 
 int calculate_vowels(string fileData){
     int count = 0;
     for(char c: fileData){
-        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
-            count++;
-        }
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') count++;
     }
 
     return count;
@@ -30,7 +29,11 @@ int number_of_words(string filedata){
     return count;
 
 }
-string reverse_string(string filedata);
+string reverse_string(string filedata){
+    reverse(filedata.begin(), filedata.end());
+
+    return filedata;
+}
 string capitalize_letter(string filedata);
 int main(){
     ifstream input;
@@ -46,7 +49,10 @@ int main(){
         getline(input, filedata);
     }
 
-    int vowel_count = calculate_vowels(filedata);
-    cout<<vowel_count<<" vowels"<<endl;
+    // int vowel_count = calculate_vowels(filedata);
+    // cout<<vowel_count<<" vowels"<<endl;
+
+    int count_words = number_of_words(filedata);
+    cout<<count_words<<" words"<<endl;
 
 }

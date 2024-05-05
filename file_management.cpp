@@ -36,16 +36,26 @@ string reverse_string(string filedata){
 }
 
 /**
- * 
+ * capitalize_letter: capitalizes first letter of each word in string
 */
 void capitalize_letter(string filedata){
+    //output object. to print in a file
     ofstream output;
     string word;
 
+    //opens file where string will be printed
     output.open("output.txt");
+
+    //if file failes to open throw an error
     if(output.fail()) cout<<"Failed to create output!";
+
+    //convert here
     else{
+
+        //converts the whole string to string stream first
         istringstream ss(filedata);
+
+        //convert each word separately
         while(ss>>word){
             word[0] = toupper(word[0]);
             output<<word<<endl;

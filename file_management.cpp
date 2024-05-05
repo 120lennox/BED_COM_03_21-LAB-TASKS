@@ -29,7 +29,13 @@ int number_of_words(string filedata){
     return count;
 
 }
+
+/**
+ * reverse_string: reverse string contents
+*/
 string reverse_string(string filedata){
+
+    //uses algorithm library to reverse string
     reverse(filedata.begin(), filedata.end());
 
     return filedata;

@@ -34,7 +34,22 @@ string reverse_string(string filedata){
 
     return filedata;
 }
-string capitalize_letter(string filedata);
+
+void capitalize_letter(string filedata){
+    ofstream output;
+    string word;
+
+    output.open("output.txt");
+    if(output.fail()) cout<<"Failed to create output!";
+    else{
+        istringstream ss(filedata);
+        while(ss>>word){
+            word[0] = toupper(word[0]);
+            output<<word<<endl;
+        }
+    }
+    
+}
 int main(){
     ifstream input;
     ofstream output;

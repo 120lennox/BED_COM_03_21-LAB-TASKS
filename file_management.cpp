@@ -6,7 +6,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include <algorithm>
+#include <algorithm> // algorithm for reversing string 
 using namespace std;
 
 /**

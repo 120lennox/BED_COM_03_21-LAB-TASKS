@@ -47,8 +47,23 @@ void capitalize_letter(string filedata){
             word[0] = toupper(word[0]);
             output<<word<<endl;
         }
+    }   
+}
+
+
+int check_int(string input){
+    int num_converted;
+    //converts the string input as string stream
+    stringstream ss(input);
+
+    //if string stream is not end of line, convert to int and if it convertible
+    if (ss>>num_converted && ss.eof()){
+        return num_converted;
     }
-    
+    else{
+        cout<<"Invalid input!\n";
+        return -1;
+    }
 }
 
 /**
@@ -59,20 +74,61 @@ int main(){
     //input objecting for reading files from external files
     ifstream input;
 
+    //filedata stores the characters from external file
     string filedata;
 
+    //opening external file
     input.open("fileData.txt");
 
+    //if file does not exist throws an error
     if (input.fail()) cout<<"Error! file does not exist \n";
+
+    //otherwise put the information in filedata string variable using getline function
     else{
         getline(input, filedata);
     }
 
+    //defining menu 
+    string opt;
+    int option;
+    while(option != 5){
+        cout<<"1. Count vowels"<<endl;
+        cout<<"2. Count words"<<endl;
+        cout<<"3. Reverse sentence"<<endl;
+        cout<<"4. Capitalize String"<<endl;
+        cout<<"5. Exit"<<endl;
+        getline(cin, opt);
 
-    // int vowel_count = calculate_vowels(filedata);
-    // cout<<vowel_count<<" vowels"<<endl;
+        //checking for valid input
+        option = check_int(opt);
 
-    int count_words = number_of_words(filedata);
-    cout<<count_words<<" words"<<endl;
+        //defining selection
+        if (option == 1){
+            int vowel_count = calculate_vowels(filedata);
+            cout<<vowel_count<<" vowels"<<endl;
+        }
+
+        else if(option == 2){
+            int count_words = number_of_words(filedata);
+            cout<<count_words<<" words"<<endl;
+        }
+
+        else if (option == 3){
+            reverse_string(filedata);
+            cout<<"check results in file! \n";
+        }
+
+        else if(option == 4) {
+            capitalize_letter(filedata);
+            cout<<"check results in file! \n";
+        }
+
+        else if(option == 5) cout<<"Exiting ... \n";
+        else 
+            {
+                cout<<"invalid input \n";
+            }
+
+    }
 
 }

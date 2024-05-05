@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 int calculate_vowels(string fileData){
@@ -19,7 +20,15 @@ int calculate_vowels(string fileData){
 }
 
 int number_of_words(string filedata){
+    string word;
     int count = 0;
+
+    istringstream ss(filedata);
+
+    while(ss>>word) count++;
+    
+    return count;
+
 }
 string reverse_string(string filedata);
 string capitalize_letter(string filedata);

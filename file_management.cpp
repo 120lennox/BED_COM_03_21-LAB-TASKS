@@ -4,4 +4,13 @@
 */
 #include <iostream>
 #include <fstream>
-#include <>
+#include <string>
+using namespace std;
+
+int calculate_vowels(string fileData);
+int number_of_words(string filedata);
+string reverse_string(string filedata);
+string capitalize_letter(string filedata);
+int main(){
+
+}

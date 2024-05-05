@@ -9,6 +9,7 @@
 #include <algorithm>
 using namespace std;
 
+
 int calculate_vowels(string fileData){
     int count = 0;
     for(char c: fileData){
@@ -17,13 +18,18 @@ int calculate_vowels(string fileData){
 
     return count;
 }
-
+/**
+ * number_of_words: counts number of words in string 
+ * return: number of words
+*/
 int number_of_words(string filedata){
     string word;
     int count = 0;
 
+    //converts whole string to stringstream
     istringstream ss(filedata);
 
+    //reads individual word
     while(ss>>word) count++;
     
     return count;
@@ -93,8 +99,11 @@ int check_int(string input){
  * return: 0 on success
 */
 int main(){
-    //input objecting for reading files from external files
+    //ifstream object for reading files from external files
     ifstream input;
+
+    //ofstream object for outputing data
+    ofstream output;
 
     //filedata stores the characters from external file
     string filedata;
@@ -136,7 +145,8 @@ int main(){
         }
 
         else if (option == 3){
-            reverse_string(filedata);
+            string reversed_string = reverse_string(filedata);
+            output<<reversed_string;
             cout<<"check results in file! \n";
         }
 

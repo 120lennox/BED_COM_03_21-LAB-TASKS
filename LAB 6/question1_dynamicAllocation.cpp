@@ -1,28 +1,18 @@
 /**
- * The program below dynamically allocates memory to integer and string
+ * @author: Lennox Mountain
+ * int_alloc: dynamically allocates memory to int
+ * str_alloc: dynamically allocates memory to string 
 */
 #include <iostream>
 #include <string>
 using namespace std;
 
-int int_alloc(int &integer){
-    //allocate memory to integer
-    int* number = new int;
-
-    //gets address of parameter
-    number = &integer;
-
-    return *number;
+int* int_alloc(int &integer){
+    return new int(integer);
 }
 
-string str_alloc(string &String){
-    //allocate memory to integer
-    string* message = new string;
-
-    //gets address of parameter
-    message = &String;
-
-    return *message;
+string* str_alloc(string &String){
+    return new string(String);
 }
 
 //program implementation
@@ -36,9 +26,16 @@ int main(){
     cout<<"Enter message: ";
     cin>>word;
 
-    int result1 = int_alloc(number);
-    string result2 = str_alloc(word);
+    int* result1 = int_alloc(number);
+    string* result2 = str_alloc(word);
 
-    cout<<"Dynamically allocated int: "<<result1<<endl;
-    cout<<"Dynamically allocated string: "<<result2<<endl;
+    cout<<"Dynamically allocated int: "<<*result1<<endl;
+    cout<<"Dynamically allocated string: "<<*result2<<endl;
+
+    delete result1;
+    result1 = nullptr;
+    delete result2;
+    result2 = nullptr;
+
+    return 0;
 }

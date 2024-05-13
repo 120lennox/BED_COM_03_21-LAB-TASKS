@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "d:/CODE ROOM/C++ Projects/BED_COM_03_21 LAB TASKS",
+      "program": "d:/CODE ROOM/C++ Projects/BED_COM_03_21 LAB TASKS/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

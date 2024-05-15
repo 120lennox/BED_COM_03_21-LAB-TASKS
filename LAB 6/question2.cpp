@@ -2,12 +2,30 @@
 using namespace std;
 
 int main(){
-    int row = 3;
-    int column = 2;
+    int rows;
+    int columns;
 
-    double** arr = new double*[row];
+    cout<<"Enter number of rows: ";
+    cin>>rows;
 
-    for (int i = 0; i < row; i++){
-        arr[i] = new double[column];
+    cout<<"Enter number of columns: ";
+    cin>>columns;
+    if (rows <= 3 && columns <= 3){
+        double** arr = new double*[rows];
+        for (int i = 0; i < rows; i++){
+            arr[i] = new double[columns];
+        }
+
+        for (int i = 0; i < rows; i++){
+            for(int j = 0; j < rows; j++){
+                cout<<arr[i][j]<<" ";
+            }
+        }
+
+        for (int i = 0; i < rows; i++) delete arr[i];
+        delete[] arr;
+    }
+    else{
+        cout<<"invalid inputs \n";
     }
 }

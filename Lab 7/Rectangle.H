@@ -4,7 +4,7 @@ using namespace std;
 
 class Rectangle{
     //default constructor
-    Rectangle();
+    
 
     //private members
     private:
@@ -13,9 +13,10 @@ class Rectangle{
 
     //public members
     public:
+        Rectangle();
         void set_width(float w);
-        void set_legnth(float l);
+        void set_length(float l);
         float calculate_area(float width, float length);
     
-    ~Rectangle();
+        ~Rectangle();
 };

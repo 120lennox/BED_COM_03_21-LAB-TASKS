@@ -6,7 +6,7 @@ Rectangle::Rectangle(){
     length = 0;
 }
 
-void Rectangle::set_legnth(float l){
+void Rectangle::set_length(float l){
     length = l;
 }
 

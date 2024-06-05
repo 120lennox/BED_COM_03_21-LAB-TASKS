@@ -50,7 +50,9 @@ int main(){
             Area area;
             
             float square_area = area.calculateArea_Square(sqaure);
-            cout<<"Area: "<<square_area<<endl; 
+            cout<<"Area: "<<square_area<<endl;
+            cout<<"==========================================================\n";
+            cout<<endl;
         }
 
         else if (new_option == 2){
@@ -74,6 +76,8 @@ int main(){
 
             float triangle_area = area.calculateArea_Triangle(triangle);
             cout<<"Area of triangle: "<<triangle_area<<endl;
+            cout<<"==========================================================\n";
+            cout<<endl;
         }
 
         else if (new_option == 3){
@@ -91,6 +95,18 @@ int main(){
 
             float radius_area = area.calculateArea_circle(new_radius);
             cout<<"Area of triangle: "<<radius_area<<endl;
+            cout<<"==========================================================\n";
+            cout<<endl;
         }
+
+        else if(new_option == 4) break;
+
+        else{
+            cout << "Invalid option. Please choose a valid option." << endl;
+            cout<<"==========================================================\n";
+            cout<<endl;
+        }
+
+
     }
 }

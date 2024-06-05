@@ -32,6 +32,9 @@ int main(){
     //rectangle object
     Rectangle rectangle1;
 
+    //object 2
+    
+
     string width;
     string length;
 
@@ -45,12 +48,17 @@ int main(){
 
     float new_length = check_float_input(length);
 
-    //setting inputs with accessor methods
+    //operations for object 2
+    Rectangle rectangle2(new_length, new_width);
+    float result2 = rectangle2.calculate_area(new_length, new_width);
+
+    //setting inputs with accessor methods  for object 1
     rectangle1.set_width(new_width);
     rectangle1.set_length(new_length);
 
+    //results for all objects
     float result = rectangle1.calculate_area(new_width, new_length);
-    cout<<"Result: "<<result<<endl;
+    cout<<"object1 result: "<<result<<". object2 result: "<<result2<<endl;
 
     return 0;
 }

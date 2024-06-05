@@ -6,6 +6,12 @@ Rectangle::Rectangle(){
     length = 0;
 }
 
+//overloaded constructor instantiation
+Rectangle::Rectangle(float l, float w){
+    length = l;
+    width = w;
+}
+
 void Rectangle::set_length(float l){
     length = l;
 }

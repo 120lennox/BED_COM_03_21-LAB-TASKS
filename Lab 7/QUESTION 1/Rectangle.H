@@ -17,6 +17,8 @@ class Rectangle{
     //public members
     public:
         Rectangle();
+        //overloaded constructor
+        Rectangle(float width, float length);
         void set_width(float w);
         void set_length(float l);
         float getWidth();
